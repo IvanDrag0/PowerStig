@@ -42,7 +42,9 @@ class ProcessMitigationRuleConvert : ProcessMitigationRule
     ProcessMitigationRuleConvert ([xml.xmlelement] $XccdfRule) : base ($XccdfRule, $true)
     {
         $this.SetMitigationTarget()
-        $this.SetMitigationToEnable()
+        $this.SetMitigationType()
+        $this.SetMitigationName()
+
         if ($this.conversionstatus -eq 'pass')
         {
             $this.SetDuplicateRule()
@@ -73,18 +75,35 @@ class ProcessMitigationRuleConvert : ProcessMitigationRule
 
     <#
         .SYNOPSIS
-            Enables the mitigation target
+            Sets the type of the mitigation
         .DESCRIPTION
             Sets the mitigation target to enabled. If the mitigation target is
             not set to enabled, it is set to disabled
     #>
-    [void] SetMitigationToEnable ()
+    [void] SetMitigationType ()
     {
-        $thisMitigation = Get-MitigationPolicyToEnable -CheckContent $this.SplitCheckContent
+        $mitigationType = Get-MitigationType -CheckContent $this.SplitCheckContent
 
-        if (-not $this.SetStatus($thisMitigation))
+        if (-not $this.SetStatus($mitigationType))
         {
-            $this.set_Enable($thisMitigation)
+            $this.set_MitigationType($mitigationType)
+        }
+    }
+
+    <#
+        .SYNOPSIS
+            Sets the name of the mitigation
+        .DESCRIPTION
+            Sets the mitigation target to enabled. If the mitigation target is
+            not set to enabled, it is set to disabled
+    #>
+    [void] SetMitigationName ()
+    {
+        $mitigationName = Get-MitigationName -RawString $this.RawString
+
+        if (-not $this.SetStatus($mitigationName))
+        {
+            $this.set_MitigationName($mitigationName)
         }
     }
 
@@ -99,7 +118,7 @@ class ProcessMitigationRuleConvert : ProcessMitigationRule
     <#{TODO}#> # HasMultipleRules is implemented inconsistently.
     [bool] HasMultipleRules ()
     {
-        return (Test-MultipleProcessMitigationRule -MitigationTarget $this.MitigationTarget)
+        return (Test-MultipleProcessMitigationType -MitigationType $this.MitigationType)
     }
 
     <#
@@ -117,7 +136,7 @@ class ProcessMitigationRuleConvert : ProcessMitigationRule
     #>
     [string[]] SplitMultipleRules ()
     {
-        return (Split-ProcessMitigationRule -MitigationTarget $this.MitigationTarget)
+        return (Split-ProcessMitigationRule -MitigationType $this.MitigationType)
     }
 
     hidden [void] SetDscResource ()

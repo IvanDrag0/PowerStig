@@ -53,7 +53,7 @@ function Get-MitigationTargetName
     .PARAMETER CheckContent
         Specifies the check-content element in the xccdf
 #>
-function Get-MitigationPolicyToEnable
+function Get-MitigationType
 {
     [CmdletBinding()]
     [OutputType([string])]
@@ -69,52 +69,14 @@ function Get-MitigationPolicyToEnable
 
     try
     {
-        # Determine if the stig rule contains policies to be enabled
-        if ( ( Test-PoliciesToEnable -CheckContent $checkContent ) -eq $false )
-        {
-            return $null
-        }
-
         $result = @()
         foreach ($line in $checkContent)
         {
             switch ($line)
             {
-                { $PSItem -match $regularExpression.IfTheStatusOf }
+                {$PSItem -match $regularExpression.MitigationType}
                 {
-                    <# 
-                    Grab the line that has "If the status of" then grab the text inbetween " and :
-                    Check to see if the line was the word 'Enable' in it
-                    #>
-                    if ($PSItem -match 'Enable')
-                    {
-                        $result += ( ( $line | Select-String -Pattern $regularExpression.TextBetweenDoubleQuoteAndColon ).Matches.Value -replace '"' -replace ':' ).Trim()
-                    }
-                    else
-                    {
-                        $result += ( ( $line | Select-String -Pattern $regularExpression.TextBetweenColonAndDoubleQuote ).Matches.Value -replace '"' -replace ':' ).Trim()
-                    }
-                }
-                { $PSItem -match $regularExpression.ColonSpaceOn }
-                {
-                    <#
-                        This address the edge case where the mitigation is specified to be enabled on a seperate line example (DEP):
-                        DEP:
-                        Enable: ON
-
-                        ASLR:
-                        BottomUp: ON
-                        ForceRelocateImages: ON
-                    #>
-                    if ( $line -match $regularExpression.EnableColon )
-                    {
-                        $enableLineMatch = ( $checkContent | Select-String -Pattern $line ).LineNumber
-                        $result += ( ( $checkContent[$enableLineMatch - 2] ) -replace ':' ).Trim()
-                    }
-                    else
-                    {
-                        $result += ( $line -replace $regularExpression.ColonSpaceOn ).Trim()
-                    }
+                    $result += (($line | Select-String -Pattern $regularExpression.MitigationType).Matches.Value)
                 }
             }
         }
@@ -129,40 +91,40 @@ function Get-MitigationPolicyToEnable
 
 <#
     .SYNOPSIS
-        Test if the check-content contains mitigations polices to enable.
+        Retreives the mitigation policy name from the check-content element in the xccdf
 
     .PARAMETER CheckContent
         Specifies the check-content element in the xccdf
-
-    .NOTES
-        Currently all rules in the STIG state the policies referenced need to be enabled.
-        However that could change in the future or in other STIGs so we need to check for both conditions (Enabled|Disabled)
 #>
-function Test-PoliciesToEnable
+function Get-MitigationName
 {
     [CmdletBinding()]
-    [OutputType([bool])]
+    [OutputType([string])]
     param
     (
         [Parameter(Mandatory = $true)]
         [AllowEmptyString()]
-        [string[]]
-        $CheckContent
+        [string]
+        $RawString
     )
 
-    foreach ( $line in $checkContent )
-    {
-        if ( $line -match $regularExpression.IfTheStatusOfIsOff )
-        {
-            return $true
-        }
+    Write-Verbose "[$($MyInvocation.MyCommand.Name)]"
 
-        if ( $line -match $regularExpression.NotHaveAStatusOfOn )
-        {
-            return $true
-        }
+    try
+    {
+        $result = @()
+        $subCheckContent  = @()
+        $subCheckContent = ($RawString | select-string -Pattern '(?<=ASLR:\n)(.+[\n\r])+').Matches.Value
+
+        $result = ($subCheckContent | select-String -Pattern $regularExpression.MitigationName -AllMatches).matches.value
+
+        return $result -join ','
     }
-    return $false
+    catch
+    {
+        Write-Verbose "[$($MyInvocation.MyCommand.Name)] Mitigation Name : Not Found"
+        return $null
+    }
 }
 
 <#
@@ -178,17 +140,17 @@ function Split-ProcessMitigationRule
         [Parameter(Mandatory = $true)]
         [AllowEmptyString()]
         [string]
-        $MitigationTarget
+        $MitigationType
     )
 
-    return ( $MitigationTarget -split ',' )
+    return ($MitigationType -split ',')
 }
 
 <#
     .SYNOPSIS
         Check if the string (MitigationTarget) contains a comma. If so the rule needs to be split
 #>
-function Test-MultipleProcessMitigationRule
+function Test-MultipleProcessMitigationType
 {
     [CmdletBinding()]
     [OutputType([bool])]
@@ -197,10 +159,10 @@ function Test-MultipleProcessMitigationRule
         [Parameter(Mandatory = $true)]
         [AllowEmptyString()]
         [string]
-        $MitigationTarget
+        $MitigationType
     )
 
-    if ( $MitigationTarget -match ',')
+    if ($MitigationType -match ',')
     {
         return $true
     }
