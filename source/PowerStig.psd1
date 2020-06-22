@@ -45,7 +45,7 @@ RequiredModules  = @(
     @{ModuleName = 'PSDscResources'; ModuleVersion = '2.10.0.0'},
     @{ModuleName = 'SecurityPolicyDsc'; ModuleVersion = '2.4.0.0'},
     @{ModuleName = 'SqlServerDsc'; ModuleVersion = '13.3.0'},
-    @{ModuleName = 'WindowsDefenderDsc'; ModuleVersion = '1.0.0.0'},
+    @{ModuleName = 'WindowsDefenderDsc'; ModuleVersion = '2.0.0.0'},
     @{ModuleName = 'xDnsServer'; ModuleVersion = '1.11.0.0'},
     @{ModuleName = 'xWebAdministration'; ModuleVersion = '2.5.0.0'},
     @{ModuleName = 'VMware.VimAutomation.Sdk'; ModuleVersion = '12.0.0.15939651'},

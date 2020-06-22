@@ -4,12 +4,11 @@
 data regularExpression
 {
     ConvertFrom-StringData -StringData @'
-        ColonSpaceOn                    = :\\sON
-        EnableColon                     = Enable:
-        IfTheStatusOf                   = If\\sthe\\sstatus\\sof
-        IfTheStatusOfIsOff              = If\\sthe\\sstatus\\sof[\\s\\S]*?\\sis\\s"OFF"[\\s\\S]*this\\sis\\sa\\sfinding
-        NotHaveAStatusOfOn              = If\\sthe\\sfollowing\\smitigations\\sdo\\snot\\shave\\sa\\sstatus\\sof\\s"ON"
-        TextBetweenDoubleQuoteAndColon  = "[\\s\\S]*?:
-        TextBetweenColonAndDoubleQuote  = :[\\s\\S]*?"
+        MitigationType = Aslr|BinarySignature|Cfg|ChildProcess|Dep|DynamicCode|ExtensionPoint|FontDisable|Heap|ImageLoad|Payload|SEHOP|StrictHandle|SystemCall
+        MitigationName = HighEntropy|OverrideHighEntropy|BottomUp|OverrideForceRelocateImages|RequireInfo|ForceRelocateImages|OverrideBottomUp|AllowStoreSignedBinaries|AuditMicrosoftSignedOnly|OverrideMicrosoftSignedOnly|AuditEnforceModuleDependencySigning|AuditStoreSigned|OverrideDependencySigning|MicrosoftSignedOnly|EnforceModuleDependencySigning|StrictControlFlowGuard|OverrideCFG|OverrideStrictCFG|Enable|SuppressExports|OverrideChildProcess|DisallowChildProcessCreation|Audit|EmulateAtlThunks|OverrideDEP|OverrideDynamicCode|BlockDynamicCode|AllowThreadsToOptOut|DisableExtensionPoints|OverrideExtensionPoint|OverrideFontDisable|DisableNonSystemFonts|TerminateOnError|OverrideHeap|OverrideBlockLowLabel|OverridePreferSystem32|OverrideBlockRemoteImageLoads|AuditPreferSystem32|PreferSystem32|AuditLowLabelImageLoads|BlockLowLabelImageLoads|AuditRemoteImageLoads|BlockRemoteImageLoads|EAFModules|AuditEnableExportAddressFilterPlus|EnableRopStackPivot|EnableExportAddressFilter|OverrideEnableRopStackPivot|AuditEnableRopCallerCheck|OverrideEnableRopCallerCheck|AuditEnableRopStackPivot|OverrideEnableImportAddressFilter|OverrideEnableExportAddressFilter|EnableExportAddressFilterPlus|AuditEnableRopSimExec|AuditEnableImportAddressFilter|OverrideEnableRopSimExec|EnableRopCallerCheck|AuditEnableExportAddressFilter|EnableRopSimExec|EnableImportAddressFilter|OverrideEnableExportAddressFilterPlus|TelemetryOnly|OverrideSEHOP|OverrideStrictHandle|DisableWin32kSystemCalls|OverrideSystemCall
+
 '@
 }
+
+
+
