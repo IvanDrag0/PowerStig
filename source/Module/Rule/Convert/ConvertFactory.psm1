@@ -184,7 +184,7 @@ class ConvertFactory
             {[ProcessMitigationRuleConvert]::Match($PSItem)}
             {
                 $null = $ruleTypeList.AddRange(
-                    [SplitFactory]::XccdfRule($Rule, 'ProcessMitigationRuleConvert', 'MitigationType')
+                    [SplitFactory]::XccdfRule($Rule, 'ProcessMitigationRuleConvert')
                 )
             }
             {[RegistryRuleConvert]::Match($PSItem)}

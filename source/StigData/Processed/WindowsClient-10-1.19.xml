@@ -1,42 +1,12 @@
 <DISASTIG version="1" classification="UNCLASSIFIED" customname="" stigid="Windows_10_STIG" description="The Windows 10 Security Technical Implementation Guide (STIG) is published as a tool to improve the security of Department of Defense (DoD) information systems. Comments or proposed revisions to this document should be sent via e-mail to the following address: disa.stig_spt@mail.mil." filename="U_MS_Windows_10_STIG_V1R19_Manual-xccdf.xml" releaseinfo="Release: 19 Benchmark Date: 25 Oct 2019" title="Windows 10 Security Technical Implementation Guide" notice="terms-of-use" source="STIG.DOD.MIL" fullversion="1.19" created="6/22/2020">
   <ProcessMitigationRule dscresourcemodule="WindowsDefenderDsc">
-    <Rule id="V-77205.a" severity="medium" conversionstatus="pass" title="WN10-EP-000110" dscresource="ProcessMitigation">
+    <Rule id="V-77205" severity="medium" conversionstatus="fail" title="WN10-EP-000110" dscresource="ProcessMitigation">
       <Description>&lt;VulnDiscussion&gt;Exploit protection in Windows 10 provides a means of enabling additional mitigations against potential threats at the system and application level. Without these additional application protections, Windows 10 may be subject to various exploits.&lt;/VulnDiscussion&gt;&lt;FalsePositives&gt;&lt;/FalsePositives&gt;&lt;FalseNegatives&gt;&lt;/FalseNegatives&gt;&lt;Documentable&gt;false&lt;/Documentable&gt;&lt;Mitigations&gt;&lt;/Mitigations&gt;&lt;SeverityOverrideGuidance&gt;&lt;/SeverityOverrideGuidance&gt;&lt;PotentialImpacts&gt;&lt;/PotentialImpacts&gt;&lt;ThirdPartyTools&gt;&lt;/ThirdPartyTools&gt;&lt;MitigationControl&gt;&lt;/MitigationControl&gt;&lt;Responsibility&gt;&lt;/Responsibility&gt;&lt;IAControls&gt;&lt;/IAControls&gt;</Description>
       <DuplicateOf />
       <IsNullOrEmpty>False</IsNullOrEmpty>
-      <MitigationName>BottomUp,ForceRelocateImages</MitigationName>
+      <MitigationName />
       <MitigationTarget>firefox.exe</MitigationTarget>
-      <MitigationType>DEP</MitigationType>
-      <MitigationValue />
-      <OrganizationValueRequired>False</OrganizationValueRequired>
-      <OrganizationValueTestString />
-      <RawString>This is NA prior to v1709 of Windows 10.
-
-This is applicable to unclassified systems, for other systems this is NA.
-
-Run "Windows PowerShell" with elevated privileges (run as administrator).
-
-Enter "Get-ProcessMitigation -Name firefox.exe".
-(Get-ProcessMitigation can be run without the -Name parameter to get a list of all application mitigations configured.)
-
-If the following mitigations do not have a status of "ON", this is a finding:
-
-DEP:
-Enable: ON
-
-ASLR:
-BottomUp: ON
-ForceRelocateImages: ON
-
-The PowerShell command produces a list of mitigations; only those with a required status of "ON" are listed here. If the PowerShell command does not produce results, ensure the letter case of the filename within the command syntax matches the letter case of the actual filename on the system.</RawString>
-    </Rule>
-    <Rule id="V-77205.b" severity="medium" conversionstatus="pass" title="WN10-EP-000110" dscresource="ProcessMitigation">
-      <Description>&lt;VulnDiscussion&gt;Exploit protection in Windows 10 provides a means of enabling additional mitigations against potential threats at the system and application level. Without these additional application protections, Windows 10 may be subject to various exploits.&lt;/VulnDiscussion&gt;&lt;FalsePositives&gt;&lt;/FalsePositives&gt;&lt;FalseNegatives&gt;&lt;/FalseNegatives&gt;&lt;Documentable&gt;false&lt;/Documentable&gt;&lt;Mitigations&gt;&lt;/Mitigations&gt;&lt;SeverityOverrideGuidance&gt;&lt;/SeverityOverrideGuidance&gt;&lt;PotentialImpacts&gt;&lt;/PotentialImpacts&gt;&lt;ThirdPartyTools&gt;&lt;/ThirdPartyTools&gt;&lt;MitigationControl&gt;&lt;/MitigationControl&gt;&lt;Responsibility&gt;&lt;/Responsibility&gt;&lt;IAControls&gt;&lt;/IAControls&gt;</Description>
-      <DuplicateOf />
-      <IsNullOrEmpty>False</IsNullOrEmpty>
-      <MitigationName>BottomUp,ForceRelocateImages</MitigationName>
-      <MitigationTarget>firefox.exe</MitigationTarget>
-      <MitigationType>ASLR</MitigationType>
+      <MitigationType>DEP ASLR</MitigationType>
       <MitigationValue />
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />

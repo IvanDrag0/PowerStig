@@ -24,20 +24,8 @@ function Get-MitigationTargetName
 
     try
     {
-        switch ($checkContent)
-        {
-            { $PSItem -match '-System' }
-            {
-                return 'System'
-            }
-            { $PSItem -match '-Name' }
-            {
-                # Grab all the text that starts on a new line or with whitespace and ends in .exe
-                $executableMatches = $checkContent | Select-String -Pattern '(^|\s)\S*?\.exe' -AllMatches
-                return ( $executableMatches.Matches.Value.Trim() ) -join ','
-
-            }
-        }
+        $executableMatch = ($checkContent | Select-String -Pattern $regularExpression.MitigationTargetName -CaseSensitive).Matches.Value
+        return $executableMatch
     }
     catch
     {
@@ -56,7 +44,7 @@ function Get-MitigationTargetName
 function Get-MitigationType
 {
     [CmdletBinding()]
-    [OutputType([string])]
+    [OutputType([string[]])]
     param
     (
         [Parameter(Mandatory = $true)]
@@ -69,22 +57,12 @@ function Get-MitigationType
 
     try
     {
-        $result = @()
-        foreach ($line in $checkContent)
-        {
-            switch ($line)
-            {
-                {$PSItem -match $regularExpression.MitigationType}
-                {
-                    $result += (($line | Select-String -Pattern $regularExpression.MitigationType).Matches.Value)
-                }
-            }
-        }
-        return $result -join ','
+        $mitigationType = ($CheckContent | Select-String -Pattern $regularExpression.MitigationType).Matches.Value
+        return $mitigationType
     }
     catch
     {
-        Write-Verbose "[$($MyInvocation.MyCommand.Name)] Mitigation Policy : Not Found"
+        Write-Verbose "[$($MyInvocation.MyCommand.Name)] Mitigation Types : Not Found"
         return $null
     }
 }
@@ -104,21 +82,16 @@ function Get-MitigationName
     (
         [Parameter(Mandatory = $true)]
         [AllowEmptyString()]
-        [string]
-        $RawString
+        [string[]]
+        $CheckContent
     )
 
     Write-Verbose "[$($MyInvocation.MyCommand.Name)]"
 
     try
     {
-        $result = @()
-        $subCheckContent  = @()
-        $subCheckContent = ($RawString | select-string -Pattern '(?<=ASLR:\n)(.+[\n\r])+').Matches.Value
-
-        $result = ($subCheckContent | select-String -Pattern $regularExpression.MitigationName -AllMatches).matches.value
-
-        return $result -join ','
+        $mitigationName = ($CheckContent | Select-String -Pattern $regularExpression.MitigationName).Matches.Value
+        return $mitigationName
     }
     catch
     {
@@ -129,43 +102,108 @@ function Get-MitigationName
 
 <#
     .SYNOPSIS
-        Consumes a list of mitigation targets seperated by a comma and outputs an array
+        Retreives the mitigation policy name from the check-content element in the xccdf
+
+    .PARAMETER CheckContent
+        Specifies the check-content element in the xccdf
 #>
-function Split-ProcessMitigationRule
+function Get-MitigationValue
 {
     [CmdletBinding()]
-    [OutputType([array])]
+    [OutputType([string])]
     param
     (
         [Parameter(Mandatory = $true)]
         [AllowEmptyString()]
-        [string]
-        $MitigationType
+        [string[]]
+        $CheckContent
     )
 
-    return ($MitigationType -split ',')
+    Write-Verbose "[$($MyInvocation.MyCommand.Name)]"
+
+    try
+    {
+        $mitigationValue = ($CheckContent | Select-String -Pattern $regularExpression.MitigationValue).Matches.Value
+        return $mitigationValue
+    }
+    catch
+    {
+        Write-Verbose "[$($MyInvocation.MyCommand.Name)] Mitigation Value : Not Found"
+        return $null
+    }
 }
 
 <#
     .SYNOPSIS
         Check if the string (MitigationTarget) contains a comma. If so the rule needs to be split
 #>
-function Test-MultipleProcessMitigationType
+
+function Test-MultipleProcessMitigations
 {
     [CmdletBinding()]
     [OutputType([bool])]
     param
     (
         [Parameter(Mandatory = $true)]
-        [AllowEmptyString()]
-        [string]
-        $MitigationType
+        [psobject]
+        $CheckContent
     )
 
-    if ($MitigationType -match ',')
+    $matchTargets = ($CheckContent | Select-String -Pattern $regularExpression.MitigationTarget -AllMatches).Matches.Value | Select-Object -Unique
+    $matchTypes = ($CheckContent | Select-String -Pattern $regularExpression.MitigationType -AllMatches).Matches.Value | Select-Object -Unique
+    $matchNames = ($CheckContent | Select-String -Pattern $regularExpression.MitigationName -AllMatches).Matches.Value | Select-Object -Unique
+
+    if (($matchTargets.count -gt 1) -or ($matchTypes.count -gt 1) -or ($matchNames.count -gt 1))
     {
         return $true
     }
     return $false
 }
+
+
+
+<#
+    .SYNOPSIS
+        Consumes a list of mitigation targets seperated by a comma and outputs an array
+#>
+function Split-MultipleProcessMitigations
+{
+    [CmdletBinding()]
+    [OutputType([System.Collections.ArrayList])]
+    param
+    (
+        [Parameter(Mandatory = $true)]
+        [psobject]
+        $CheckContent
+    )
+
+    $trimMatchTypes = @()
+    $trimMatchNames = @()
+    $matchNamesGroup = @()
+    $processMitigations = @()
+    $matchTargets = ($CheckContent | Select-String -Pattern $regularExpression.MitigationTarget -AllMatches).Matches.Value | Select-Object -Unique
+    $matchTypes = ($CheckContent | Select-String -Pattern $regularExpression.MitigationType -AllMatches).Matches.Value | Select-Object -Unique
+    $matchNames = ($CheckContent | Select-String -Pattern $regularExpression.MitigationName -AllMatches).Matches.Value | Select-Object -Unique
+
+    foreach($mitigationTarget in $matchTargets)
+    {
+        foreach ($mitigationType in $MatchTypes)
+        {
+            $matchNamesGroup = ($CheckContent | Select-String -Pattern "(?<=$($mitigationType):\n)(.+[\n\r])+" -AllMatches).Matches.Value
+            $matchNamesGroupSplit = ($matchNamesGroup.trim()).Split("`n")
+            foreach($matchName in $matchNamesGroupSplit)
+            {
+                $mitigationNames = ($matchName | Select-String -Pattern $regularExpression.MitigationName).Matches.Value
+                foreach($mitigationName in $mitigationNames)
+                {
+                    $mitigationValue = ($matchName | Select-String -Pattern "(?<=$($mitigationName):\s)(\w+)" -AllMatches).Matches.Value
+                    $processMitigations += '{0}:{1}:{2}:{3}' -f $mitigationTarget,$mitigationType,$mitigationName,$mitigationValue
+                }
+            }
+        }
+    }
+
+    return $processMitigations
+}
+
 #endregion
