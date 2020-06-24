@@ -2404,7 +2404,7 @@ If the defaults have not been changed, these are not a finding.
       <MitigationName>Enable</MitigationName>
       <MitigationTarget>System</MitigationTarget>
       <MitigationType>DEP</MitigationType>
-      <MitigationValue>ON</MitigationValue>
+      <MitigationValue>true</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>This is NA prior to v1709 of Windows 10.
@@ -2430,7 +2430,7 @@ NOTSET (Default configuration)</RawString>
       <MitigationName>BottomUp</MitigationName>
       <MitigationTarget>System</MitigationTarget>
       <MitigationType>ASLR</MitigationType>
-      <MitigationValue>ON</MitigationValue>
+      <MitigationValue>true</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>This is NA prior to v1709 of Windows 10.
@@ -2456,7 +2456,7 @@ NOTSET (Default configuration)</RawString>
       <MitigationName>Enable</MitigationName>
       <MitigationTarget>System</MitigationTarget>
       <MitigationType>CFG</MitigationType>
-      <MitigationValue>ON</MitigationValue>
+      <MitigationValue>true</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>This is NA prior to v1709 of Windows 10.
@@ -2482,7 +2482,7 @@ NOTSET (Default configuration)</RawString>
       <MitigationName>Enable</MitigationName>
       <MitigationTarget>System</MitigationTarget>
       <MitigationType>SEHOP</MitigationType>
-      <MitigationValue>ON</MitigationValue>
+      <MitigationValue>true</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>This is NA prior to v1709 of Windows 10.
@@ -2508,7 +2508,7 @@ NOTSET (Default configuration)</RawString>
       <MitigationName>TerminateOnError</MitigationName>
       <MitigationTarget>System</MitigationTarget>
       <MitigationType>Heap</MitigationType>
-      <MitigationValue>ON</MitigationValue>
+      <MitigationValue>true</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>This is NA prior to v1709 of Windows 10.
@@ -2534,7 +2534,7 @@ NOTSET (Default configuration)</RawString>
       <MitigationName>OverrideDEP</MitigationName>
       <MitigationTarget>Acrobat.exe</MitigationTarget>
       <MitigationType>DEP</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>Acrobat.exe:DEP:OverrideDEP:False</RawString>
@@ -2546,7 +2546,7 @@ NOTSET (Default configuration)</RawString>
       <MitigationName>ForceRelocateImages</MitigationName>
       <MitigationTarget>Acrobat.exe</MitigationTarget>
       <MitigationType>ASLR</MitigationType>
-      <MitigationValue>ON</MitigationValue>
+      <MitigationValue>true</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>Acrobat.exe:ASLR:ForceRelocateImages:ON</RawString>
@@ -2558,7 +2558,7 @@ NOTSET (Default configuration)</RawString>
       <MitigationName>OverrideEnableExportAddressFilter</MitigationName>
       <MitigationTarget>Acrobat.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>Acrobat.exe:Payload:OverrideEnableExportAddressFilter:False</RawString>
@@ -2570,7 +2570,7 @@ NOTSET (Default configuration)</RawString>
       <MitigationName>OverrideEnableExportAddressFilterPlus</MitigationName>
       <MitigationTarget>Acrobat.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>Acrobat.exe:Payload:OverrideEnableExportAddressFilterPlus:False</RawString>
@@ -2582,7 +2582,7 @@ NOTSET (Default configuration)</RawString>
       <MitigationName>OverrideEnableImportAddressFilter</MitigationName>
       <MitigationTarget>Acrobat.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>Acrobat.exe:Payload:OverrideEnableImportAddressFilter:False</RawString>
@@ -2594,7 +2594,7 @@ NOTSET (Default configuration)</RawString>
       <MitigationName>OverrideEnableRopStackPivot</MitigationName>
       <MitigationTarget>Acrobat.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>Acrobat.exe:Payload:OverrideEnableRopStackPivot:False</RawString>
@@ -2606,7 +2606,7 @@ NOTSET (Default configuration)</RawString>
       <MitigationName>OverrideEnableRopCallerCheck</MitigationName>
       <MitigationTarget>Acrobat.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>Acrobat.exe:Payload:OverrideEnableRopCallerCheck:False</RawString>
@@ -2618,7 +2618,7 @@ NOTSET (Default configuration)</RawString>
       <MitigationName>OverrideEnableRopSimExec</MitigationName>
       <MitigationTarget>Acrobat.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>Acrobat.exe:Payload:OverrideEnableRopSimExec:False</RawString>
@@ -2630,7 +2630,7 @@ NOTSET (Default configuration)</RawString>
       <MitigationName>OverrideDEP</MitigationName>
       <MitigationTarget>AcroRd32.exe</MitigationTarget>
       <MitigationType>DEP</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>AcroRd32.exe:DEP:OverrideDEP:False</RawString>
@@ -2642,7 +2642,7 @@ NOTSET (Default configuration)</RawString>
       <MitigationName>ForceRelocateImages</MitigationName>
       <MitigationTarget>AcroRd32.exe</MitigationTarget>
       <MitigationType>ASLR</MitigationType>
-      <MitigationValue>ON</MitigationValue>
+      <MitigationValue>true</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>AcroRd32.exe:ASLR:ForceRelocateImages:ON</RawString>
@@ -2654,7 +2654,7 @@ NOTSET (Default configuration)</RawString>
       <MitigationName>OverrideEnableExportAddressFilter</MitigationName>
       <MitigationTarget>AcroRd32.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>AcroRd32.exe:Payload:OverrideEnableExportAddressFilter:False</RawString>
@@ -2666,7 +2666,7 @@ NOTSET (Default configuration)</RawString>
       <MitigationName>OverrideEnableExportAddressFilterPlus</MitigationName>
       <MitigationTarget>AcroRd32.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>AcroRd32.exe:Payload:OverrideEnableExportAddressFilterPlus:False</RawString>
@@ -2678,7 +2678,7 @@ NOTSET (Default configuration)</RawString>
       <MitigationName>OverrideEnableImportAddressFilter</MitigationName>
       <MitigationTarget>AcroRd32.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>AcroRd32.exe:Payload:OverrideEnableImportAddressFilter:False</RawString>
@@ -2690,7 +2690,7 @@ NOTSET (Default configuration)</RawString>
       <MitigationName>OverrideEnableRopStackPivot</MitigationName>
       <MitigationTarget>AcroRd32.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>AcroRd32.exe:Payload:OverrideEnableRopStackPivot:False</RawString>
@@ -2702,7 +2702,7 @@ NOTSET (Default configuration)</RawString>
       <MitigationName>OverrideEnableRopCallerCheck</MitigationName>
       <MitigationTarget>AcroRd32.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>AcroRd32.exe:Payload:OverrideEnableRopCallerCheck:False</RawString>
@@ -2714,7 +2714,7 @@ NOTSET (Default configuration)</RawString>
       <MitigationName>OverrideEnableRopSimExec</MitigationName>
       <MitigationTarget>AcroRd32.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>AcroRd32.exe:Payload:OverrideEnableRopSimExec:False</RawString>
@@ -2726,7 +2726,7 @@ NOTSET (Default configuration)</RawString>
       <MitigationName>OverrideDEP</MitigationName>
       <MitigationTarget>chrome.exe</MitigationTarget>
       <MitigationType>DEP</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>This is NA prior to v1709 of Windows 10.
@@ -2752,7 +2752,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideDEP</MitigationName>
       <MitigationTarget>EXCEL.EXE</MitigationTarget>
       <MitigationType>DEP</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>EXCEL.EXE:DEP:OverrideDEP:False</RawString>
@@ -2764,7 +2764,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>ForceRelocateImages</MitigationName>
       <MitigationTarget>EXCEL.EXE</MitigationTarget>
       <MitigationType>ASLR</MitigationType>
-      <MitigationValue>ON</MitigationValue>
+      <MitigationValue>true</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>EXCEL.EXE:ASLR:ForceRelocateImages:ON</RawString>
@@ -2776,7 +2776,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilter</MitigationName>
       <MitigationTarget>EXCEL.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>EXCEL.EXE:Payload:OverrideEnableExportAddressFilter:False</RawString>
@@ -2788,7 +2788,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilterPlus</MitigationName>
       <MitigationTarget>EXCEL.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>EXCEL.EXE:Payload:OverrideEnableExportAddressFilterPlus:False</RawString>
@@ -2800,7 +2800,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableImportAddressFilter</MitigationName>
       <MitigationTarget>EXCEL.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>EXCEL.EXE:Payload:OverrideEnableImportAddressFilter:False</RawString>
@@ -2812,7 +2812,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopStackPivot</MitigationName>
       <MitigationTarget>EXCEL.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>EXCEL.EXE:Payload:OverrideEnableRopStackPivot:False</RawString>
@@ -2824,7 +2824,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopCallerCheck</MitigationName>
       <MitigationTarget>EXCEL.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>EXCEL.EXE:Payload:OverrideEnableRopCallerCheck:False</RawString>
@@ -2836,7 +2836,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopSimExec</MitigationName>
       <MitigationTarget>EXCEL.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>EXCEL.EXE:Payload:OverrideEnableRopSimExec:False</RawString>
@@ -2848,7 +2848,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>Override DEP</MitigationName>
       <MitigationTarget>firefox.exe</MitigationTarget>
       <MitigationType>DEP</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>firefox.exe:DEP:Override DEP:False</RawString>
@@ -2860,7 +2860,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>ForceRelocateImages</MitigationName>
       <MitigationTarget>firefox.exe</MitigationTarget>
       <MitigationType>ASLR</MitigationType>
-      <MitigationValue>True</MitigationValue>
+      <MitigationValue>true</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>firefox.exe:ASLR:ForceRelocateImages:True</RawString>
@@ -2872,7 +2872,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>Override DEP</MitigationName>
       <MitigationTarget>FLTLDR.EXE</MitigationTarget>
       <MitigationType>DEP</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>FLTLDR.EXE:DEP:Override DEP:False</RawString>
@@ -2884,7 +2884,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>ImageLoad OverrideBlockRemoteImages</MitigationName>
       <MitigationTarget>FLTLDR.EXE</MitigationTarget>
       <MitigationType>ImageLoad</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>FLTLDR.EXE:ImageLoad:ImageLoad OverrideBlockRemoteImages:False</RawString>
@@ -2896,7 +2896,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilter</MitigationName>
       <MitigationTarget>FLTLDR.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>FLTLDR.EXE:Payload:OverrideEnableExportAddressFilter:False</RawString>
@@ -2908,7 +2908,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilterPlus</MitigationName>
       <MitigationTarget>FLTLDR.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>FLTLDR.EXE:Payload:OverrideEnableExportAddressFilterPlus:False</RawString>
@@ -2920,7 +2920,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableImportAddressFilter</MitigationName>
       <MitigationTarget>FLTLDR.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>FLTLDR.EXE:Payload:OverrideEnableImportAddressFilter:False</RawString>
@@ -2932,7 +2932,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopStackPivot</MitigationName>
       <MitigationTarget>FLTLDR.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>FLTLDR.EXE:Payload:OverrideEnableRopStackPivot:False</RawString>
@@ -2944,7 +2944,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopCallerCheck</MitigationName>
       <MitigationTarget>FLTLDR.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>FLTLDR.EXE:Payload:OverrideEnableRopCallerCheck:False</RawString>
@@ -2956,7 +2956,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopSimExec</MitigationName>
       <MitigationTarget>FLTLDR.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>FLTLDR.EXE:Payload:OverrideEnableRopSimExec:False</RawString>
@@ -2968,7 +2968,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideChildProcess</MitigationName>
       <MitigationTarget>FLTLDR.EXE</MitigationTarget>
       <MitigationType>Child Process</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>FLTLDR.EXE:Child Process:OverrideChildProcess:False</RawString>
@@ -2980,7 +2980,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideDEP</MitigationName>
       <MitigationTarget>GROOVE.EXE</MitigationTarget>
       <MitigationType>DEP</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>GROOVE.EXE:DEP:OverrideDEP:False</RawString>
@@ -2992,7 +2992,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>ForceRelocateImages</MitigationName>
       <MitigationTarget>GROOVE.EXE</MitigationTarget>
       <MitigationType>ASLR</MitigationType>
-      <MitigationValue>True</MitigationValue>
+      <MitigationValue>true</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>GROOVE.EXE:ASLR:ForceRelocateImages:True</RawString>
@@ -3004,7 +3004,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilter</MitigationName>
       <MitigationTarget>GROOVE.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>GROOVE.EXE:Payload:OverrideEnableExportAddressFilter:False</RawString>
@@ -3016,7 +3016,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilterPlus</MitigationName>
       <MitigationTarget>GROOVE.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>GROOVE.EXE:Payload:OverrideEnableExportAddressFilterPlus:False</RawString>
@@ -3028,7 +3028,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableImportAddressFilter</MitigationName>
       <MitigationTarget>GROOVE.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>GROOVE.EXE:Payload:OverrideEnableImportAddressFilter:False</RawString>
@@ -3040,7 +3040,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopStackPivot</MitigationName>
       <MitigationTarget>GROOVE.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>GROOVE.EXE:Payload:OverrideEnableRopStackPivot:False</RawString>
@@ -3052,7 +3052,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopCallerCheck</MitigationName>
       <MitigationTarget>GROOVE.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>GROOVE.EXE:Payload:OverrideEnableRopCallerCheck:False</RawString>
@@ -3064,7 +3064,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopSimExec</MitigationName>
       <MitigationTarget>GROOVE.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>GROOVE.EXE:Payload:OverrideEnableRopSimExec:False</RawString>
@@ -3076,7 +3076,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideChildProcess</MitigationName>
       <MitigationTarget>GROOVE.EXE</MitigationTarget>
       <MitigationType>Child Process</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>GROOVE.EXE:Child Process:OverrideChildProcess:False</RawString>
@@ -3088,7 +3088,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideDEP</MitigationName>
       <MitigationTarget>iexplore.exe</MitigationTarget>
       <MitigationType>DEP</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>iexplore.exe:DEP:OverrideDEP:False</RawString>
@@ -3100,7 +3100,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>ForceRelocateImages</MitigationName>
       <MitigationTarget>iexplore.exe</MitigationTarget>
       <MitigationType>ASLR</MitigationType>
-      <MitigationValue>ON</MitigationValue>
+      <MitigationValue>true</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>iexplore.exe:ASLR:ForceRelocateImages:ON</RawString>
@@ -3112,7 +3112,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilter</MitigationName>
       <MitigationTarget>iexplore.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>iexplore.exe:Payload:OverrideEnableExportAddressFilter:False</RawString>
@@ -3124,7 +3124,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilterPlus</MitigationName>
       <MitigationTarget>iexplore.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>iexplore.exe:Payload:OverrideEnableExportAddressFilterPlus:False</RawString>
@@ -3136,7 +3136,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableImportAddressFilter</MitigationName>
       <MitigationTarget>iexplore.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>iexplore.exe:Payload:OverrideEnableImportAddressFilter:False</RawString>
@@ -3148,7 +3148,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopStackPivot</MitigationName>
       <MitigationTarget>iexplore.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>iexplore.exe:Payload:OverrideEnableRopStackPivot:False</RawString>
@@ -3160,7 +3160,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopCallerCheck</MitigationName>
       <MitigationTarget>iexplore.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>iexplore.exe:Payload:OverrideEnableRopCallerCheck:False</RawString>
@@ -3172,7 +3172,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopSimExec</MitigationName>
       <MitigationTarget>iexplore.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>iexplore.exe:Payload:OverrideEnableRopSimExec:False</RawString>
@@ -3184,7 +3184,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideDEP</MitigationName>
       <MitigationTarget>INFOPATH.EXE</MitigationTarget>
       <MitigationType>DEP</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>INFOPATH.EXE:DEP:OverrideDEP:False</RawString>
@@ -3196,7 +3196,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>ForceRelocateImages</MitigationName>
       <MitigationTarget>INFOPATH.EXE</MitigationTarget>
       <MitigationType>ASLR</MitigationType>
-      <MitigationValue>ON</MitigationValue>
+      <MitigationValue>true</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>INFOPATH.EXE:ASLR:ForceRelocateImages:ON</RawString>
@@ -3208,7 +3208,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilter</MitigationName>
       <MitigationTarget>INFOPATH.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>INFOPATH.EXE:Payload:OverrideEnableExportAddressFilter:False</RawString>
@@ -3220,7 +3220,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilterPlus</MitigationName>
       <MitigationTarget>INFOPATH.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>INFOPATH.EXE:Payload:OverrideEnableExportAddressFilterPlus:False</RawString>
@@ -3232,7 +3232,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableImportAddressFilter</MitigationName>
       <MitigationTarget>INFOPATH.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>INFOPATH.EXE:Payload:OverrideEnableImportAddressFilter:False</RawString>
@@ -3244,7 +3244,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopStackPivot</MitigationName>
       <MitigationTarget>INFOPATH.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>INFOPATH.EXE:Payload:OverrideEnableRopStackPivot:False</RawString>
@@ -3256,7 +3256,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopCallerCheck</MitigationName>
       <MitigationTarget>INFOPATH.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>INFOPATH.EXE:Payload:OverrideEnableRopCallerCheck:False</RawString>
@@ -3268,7 +3268,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopSimExec</MitigationName>
       <MitigationTarget>INFOPATH.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>INFOPATH.EXE:Payload:OverrideEnableRopSimExec:False</RawString>
@@ -3280,7 +3280,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideDEP</MitigationName>
       <MitigationTarget>java.exe</MitigationTarget>
       <MitigationType>DEP</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>java.exe:DEP:OverrideDEP:False</RawString>
@@ -3292,7 +3292,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilter</MitigationName>
       <MitigationTarget>java.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>java.exe:Payload:OverrideEnableExportAddressFilter:False</RawString>
@@ -3304,7 +3304,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilterPlus</MitigationName>
       <MitigationTarget>java.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>java.exe:Payload:OverrideEnableExportAddressFilterPlus:False</RawString>
@@ -3316,7 +3316,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableImportAddressFilter</MitigationName>
       <MitigationTarget>java.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>java.exe:Payload:OverrideEnableImportAddressFilter:False</RawString>
@@ -3328,7 +3328,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopStackPivot</MitigationName>
       <MitigationTarget>java.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>java.exe:Payload:OverrideEnableRopStackPivot:False</RawString>
@@ -3340,7 +3340,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopCallerCheck</MitigationName>
       <MitigationTarget>java.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>java.exe:Payload:OverrideEnableRopCallerCheck:False</RawString>
@@ -3352,7 +3352,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopSimExec</MitigationName>
       <MitigationTarget>java.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>java.exe:Payload:OverrideEnableRopSimExec:False</RawString>
@@ -3364,7 +3364,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideDEP</MitigationName>
       <MitigationTarget>javaw.exe</MitigationTarget>
       <MitigationType>DEP</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString> javaw.exe:DEP:OverrideDEP:False</RawString>
@@ -3376,7 +3376,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilter</MitigationName>
       <MitigationTarget>javaw.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString> javaw.exe:Payload:OverrideEnableExportAddressFilter:False</RawString>
@@ -3388,7 +3388,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilterPlus</MitigationName>
       <MitigationTarget>javaw.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString> javaw.exe:Payload:OverrideEnableExportAddressFilterPlus:False</RawString>
@@ -3400,7 +3400,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableImportAddressFilter</MitigationName>
       <MitigationTarget>javaw.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString> javaw.exe:Payload:OverrideEnableImportAddressFilter:False</RawString>
@@ -3412,7 +3412,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopStackPivot</MitigationName>
       <MitigationTarget>javaw.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString> javaw.exe:Payload:OverrideEnableRopStackPivot:False</RawString>
@@ -3424,7 +3424,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopCallerCheck</MitigationName>
       <MitigationTarget>javaw.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString> javaw.exe:Payload:OverrideEnableRopCallerCheck:False</RawString>
@@ -3436,7 +3436,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopSimExec</MitigationName>
       <MitigationTarget>javaw.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString> javaw.exe:Payload:OverrideEnableRopSimExec:False</RawString>
@@ -3448,7 +3448,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideDEP</MitigationName>
       <MitigationTarget>javaws.exe</MitigationTarget>
       <MitigationType>DEP</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString> javaws.exe:DEP:OverrideDEP:False</RawString>
@@ -3460,7 +3460,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilter</MitigationName>
       <MitigationTarget>javaws.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString> javaws.exe:Payload:OverrideEnableExportAddressFilter:False</RawString>
@@ -3472,7 +3472,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilterPlus</MitigationName>
       <MitigationTarget>javaws.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString> javaws.exe:Payload:OverrideEnableExportAddressFilterPlus:False</RawString>
@@ -3484,7 +3484,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableImportAddressFilter</MitigationName>
       <MitigationTarget>javaws.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString> javaws.exe:Payload:OverrideEnableImportAddressFilter:False</RawString>
@@ -3496,7 +3496,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopStackPivot</MitigationName>
       <MitigationTarget>javaws.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString> javaws.exe:Payload:OverrideEnableRopStackPivot:False</RawString>
@@ -3508,7 +3508,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopCallerCheck</MitigationName>
       <MitigationTarget>javaws.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString> javaws.exe:Payload:OverrideEnableRopCallerCheck:False</RawString>
@@ -3520,7 +3520,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopSimExec</MitigationName>
       <MitigationTarget>javaws.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString> javaws.exe:Payload:OverrideEnableRopSimExec:False</RawString>
@@ -3532,7 +3532,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideDEP</MitigationName>
       <MitigationTarget>lync.exe</MitigationTarget>
       <MitigationType>DEP</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>lync.exe:DEP:OverrideDEP:False</RawString>
@@ -3544,7 +3544,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>ForceRelocateImages</MitigationName>
       <MitigationTarget>lync.exe</MitigationTarget>
       <MitigationType>ASLR</MitigationType>
-      <MitigationValue>ON</MitigationValue>
+      <MitigationValue>true</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>lync.exe:ASLR:ForceRelocateImages:ON</RawString>
@@ -3556,7 +3556,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilter</MitigationName>
       <MitigationTarget>lync.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>lync.exe:Payload:OverrideEnableExportAddressFilter:False</RawString>
@@ -3568,7 +3568,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilterPlus</MitigationName>
       <MitigationTarget>lync.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>lync.exe:Payload:OverrideEnableExportAddressFilterPlus:False</RawString>
@@ -3580,7 +3580,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableImportAddressFilter</MitigationName>
       <MitigationTarget>lync.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>lync.exe:Payload:OverrideEnableImportAddressFilter:False</RawString>
@@ -3592,7 +3592,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopStackPivot</MitigationName>
       <MitigationTarget>lync.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>lync.exe:Payload:OverrideEnableRopStackPivot:False</RawString>
@@ -3604,7 +3604,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopCallerCheck</MitigationName>
       <MitigationTarget>lync.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>lync.exe:Payload:OverrideEnableRopCallerCheck:False</RawString>
@@ -3616,7 +3616,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopSimExec</MitigationName>
       <MitigationTarget>lync.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>lync.exe:Payload:OverrideEnableRopSimExec:False</RawString>
@@ -3628,7 +3628,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideDEP</MitigationName>
       <MitigationTarget>MSACCESS.EXE</MitigationTarget>
       <MitigationType>DEP</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>MSACCESS.EXE:DEP:OverrideDEP:False</RawString>
@@ -3640,7 +3640,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>ForceRelocateImages</MitigationName>
       <MitigationTarget>MSACCESS.EXE</MitigationTarget>
       <MitigationType>ASLR</MitigationType>
-      <MitigationValue>ON</MitigationValue>
+      <MitigationValue>true</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>MSACCESS.EXE:ASLR:ForceRelocateImages:ON</RawString>
@@ -3652,7 +3652,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilter</MitigationName>
       <MitigationTarget>MSACCESS.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>MSACCESS.EXE:Payload:OverrideEnableExportAddressFilter:False</RawString>
@@ -3664,7 +3664,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilterPlus</MitigationName>
       <MitigationTarget>MSACCESS.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>MSACCESS.EXE:Payload:OverrideEnableExportAddressFilterPlus:False</RawString>
@@ -3676,7 +3676,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableImportAddressFilter</MitigationName>
       <MitigationTarget>MSACCESS.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>MSACCESS.EXE:Payload:OverrideEnableImportAddressFilter:False</RawString>
@@ -3688,7 +3688,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopStackPivot</MitigationName>
       <MitigationTarget>MSACCESS.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>MSACCESS.EXE:Payload:OverrideEnableRopStackPivot:False</RawString>
@@ -3700,7 +3700,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopCallerCheck</MitigationName>
       <MitigationTarget>MSACCESS.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>MSACCESS.EXE:Payload:OverrideEnableRopCallerCheck:False</RawString>
@@ -3712,7 +3712,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopSimExec</MitigationName>
       <MitigationTarget>MSACCESS.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>MSACCESS.EXE:Payload:OverrideEnableRopSimExec:False</RawString>
@@ -3724,7 +3724,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideDEP</MitigationName>
       <MitigationTarget>MSPUB.EXE</MitigationTarget>
       <MitigationType>DEP</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>MSPUB.EXE:DEP:OverrideDEP:False</RawString>
@@ -3736,7 +3736,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>ForceRelocateImages</MitigationName>
       <MitigationTarget>MSPUB.EXE</MitigationTarget>
       <MitigationType>ASLR</MitigationType>
-      <MitigationValue>ON</MitigationValue>
+      <MitigationValue>true</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>MSPUB.EXE:ASLR:ForceRelocateImages:ON</RawString>
@@ -3748,7 +3748,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilter</MitigationName>
       <MitigationTarget>MSPUB.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>MSPUB.EXE:Payload:OverrideEnableExportAddressFilter:False</RawString>
@@ -3760,7 +3760,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilterPlus</MitigationName>
       <MitigationTarget>MSPUB.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>MSPUB.EXE:Payload:OverrideEnableExportAddressFilterPlus:False</RawString>
@@ -3772,7 +3772,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableImportAddressFilter</MitigationName>
       <MitigationTarget>MSPUB.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>MSPUB.EXE:Payload:OverrideEnableImportAddressFilter:False</RawString>
@@ -3784,7 +3784,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopStackPivot</MitigationName>
       <MitigationTarget>MSPUB.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>MSPUB.EXE:Payload:OverrideEnableRopStackPivot:False</RawString>
@@ -3796,7 +3796,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopCallerCheck</MitigationName>
       <MitigationTarget>MSPUB.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>MSPUB.EXE:Payload:OverrideEnableRopCallerCheck:False</RawString>
@@ -3808,7 +3808,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopSimExec</MitigationName>
       <MitigationTarget>MSPUB.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>MSPUB.EXE:Payload:OverrideEnableRopSimExec:False</RawString>
@@ -3820,7 +3820,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>Override DEP</MitigationName>
       <MitigationTarget>OneDrive.exe</MitigationTarget>
       <MitigationType>DEP</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>OneDrive.exe:DEP:Override DEP:False</RawString>
@@ -3832,7 +3832,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilter</MitigationName>
       <MitigationTarget>OneDrive.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>OneDrive.exe:Payload:OverrideEnableExportAddressFilter:False</RawString>
@@ -3844,7 +3844,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilterPlus</MitigationName>
       <MitigationTarget>OneDrive.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>OneDrive.exe:Payload:OverrideEnableExportAddressFilterPlus:False</RawString>
@@ -3856,7 +3856,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableImportAddressFilter</MitigationName>
       <MitigationTarget>OneDrive.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>OneDrive.exe:Payload:OverrideEnableImportAddressFilter:False</RawString>
@@ -3868,7 +3868,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopStackPivot</MitigationName>
       <MitigationTarget>OneDrive.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>OneDrive.exe:Payload:OverrideEnableRopStackPivot:False</RawString>
@@ -3880,7 +3880,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopCallerCheck</MitigationName>
       <MitigationTarget>OneDrive.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>OneDrive.exe:Payload:OverrideEnableRopCallerCheck:False</RawString>
@@ -3892,7 +3892,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopSimExec</MitigationName>
       <MitigationTarget>OneDrive.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>OneDrive.exe:Payload:OverrideEnableRopSimExec:False</RawString>
@@ -3904,7 +3904,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideDEP</MitigationName>
       <MitigationTarget>OIS.EXE</MitigationTarget>
       <MitigationType>DEP</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>OIS.EXE:DEP:OverrideDEP:False</RawString>
@@ -3916,7 +3916,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilter</MitigationName>
       <MitigationTarget>OIS.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>OIS.EXE:Payload:OverrideEnableExportAddressFilter:False</RawString>
@@ -3928,7 +3928,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilterPlus</MitigationName>
       <MitigationTarget>OIS.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>OIS.EXE:Payload:OverrideEnableExportAddressFilterPlus:False</RawString>
@@ -3940,7 +3940,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableImportAddressFilter</MitigationName>
       <MitigationTarget>OIS.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>OIS.EXE:Payload:OverrideEnableImportAddressFilter:False</RawString>
@@ -3952,7 +3952,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopStackPivot</MitigationName>
       <MitigationTarget>OIS.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>OIS.EXE:Payload:OverrideEnableRopStackPivot:False</RawString>
@@ -3964,7 +3964,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopCallerCheck</MitigationName>
       <MitigationTarget>OIS.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>OIS.EXE:Payload:OverrideEnableRopCallerCheck:False</RawString>
@@ -3976,7 +3976,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopSimExec</MitigationName>
       <MitigationTarget>OIS.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>OIS.EXE:Payload:OverrideEnableRopSimExec:False</RawString>
@@ -3988,7 +3988,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideDEP</MitigationName>
       <MitigationTarget>OUTLOOK.EXE</MitigationTarget>
       <MitigationType>DEP</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>OUTLOOK.EXE:DEP:OverrideDEP:False</RawString>
@@ -4000,7 +4000,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>ForceRelocateImages</MitigationName>
       <MitigationTarget>OUTLOOK.EXE</MitigationTarget>
       <MitigationType>ASLR</MitigationType>
-      <MitigationValue>ON</MitigationValue>
+      <MitigationValue>true</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>OUTLOOK.EXE:ASLR:ForceRelocateImages:ON</RawString>
@@ -4012,7 +4012,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilter</MitigationName>
       <MitigationTarget>OUTLOOK.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>OUTLOOK.EXE:Payload:OverrideEnableExportAddressFilter:False</RawString>
@@ -4024,7 +4024,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilterPlus</MitigationName>
       <MitigationTarget>OUTLOOK.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>OUTLOOK.EXE:Payload:OverrideEnableExportAddressFilterPlus:False</RawString>
@@ -4036,7 +4036,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableImportAddressFilter</MitigationName>
       <MitigationTarget>OUTLOOK.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>OUTLOOK.EXE:Payload:OverrideEnableImportAddressFilter:False</RawString>
@@ -4048,7 +4048,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopStackPivot</MitigationName>
       <MitigationTarget>OUTLOOK.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>OUTLOOK.EXE:Payload:OverrideEnableRopStackPivot:False</RawString>
@@ -4060,7 +4060,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopCallerCheck</MitigationName>
       <MitigationTarget>OUTLOOK.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>OUTLOOK.EXE:Payload:OverrideEnableRopCallerCheck:False</RawString>
@@ -4072,7 +4072,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopSimExec</MitigationName>
       <MitigationTarget>OUTLOOK.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>OUTLOOK.EXE:Payload:OverrideEnableRopSimExec:False</RawString>
@@ -4084,7 +4084,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>Enable</MitigationName>
       <MitigationTarget>plugin-container.exe</MitigationTarget>
       <MitigationType>DEP</MitigationType>
-      <MitigationValue>ON</MitigationValue>
+      <MitigationValue>true</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>plugin-container.exe:DEP:Enable:ON</RawString>
@@ -4096,7 +4096,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>EnableExportAddressFilter</MitigationName>
       <MitigationTarget>plugin-container.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>ON</MitigationValue>
+      <MitigationValue>true</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>plugin-container.exe:Payload:EnableExportAddressFilter:ON</RawString>
@@ -4108,7 +4108,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>EnableExportAddressFilterPlus</MitigationName>
       <MitigationTarget>plugin-container.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>ON</MitigationValue>
+      <MitigationValue>true</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>plugin-container.exe:Payload:EnableExportAddressFilterPlus:ON</RawString>
@@ -4120,7 +4120,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>EnableImportAddressFilter</MitigationName>
       <MitigationTarget>plugin-container.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>ON</MitigationValue>
+      <MitigationValue>true</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>plugin-container.exe:Payload:EnableImportAddressFilter:ON</RawString>
@@ -4132,7 +4132,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>EnableRopStackPivot</MitigationName>
       <MitigationTarget>plugin-container.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>ON</MitigationValue>
+      <MitigationValue>true</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>plugin-container.exe:Payload:EnableRopStackPivot:ON</RawString>
@@ -4144,7 +4144,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>EnableRopCallerCheck</MitigationName>
       <MitigationTarget>plugin-container.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>ON</MitigationValue>
+      <MitigationValue>true</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>plugin-container.exe:Payload:EnableRopCallerCheck:ON</RawString>
@@ -4156,7 +4156,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>EnableRopSimExec</MitigationName>
       <MitigationTarget>plugin-container.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>ON</MitigationValue>
+      <MitigationValue>true</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>plugin-container.exe:Payload:EnableRopSimExec:ON</RawString>
@@ -4168,7 +4168,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideDEP</MitigationName>
       <MitigationTarget>POWERPNT.EXE</MitigationTarget>
       <MitigationType>DEP</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>POWERPNT.EXE:DEP:OverrideDEP:False</RawString>
@@ -4180,7 +4180,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>ForceRelocateImages</MitigationName>
       <MitigationTarget>POWERPNT.EXE</MitigationTarget>
       <MitigationType>ASLR</MitigationType>
-      <MitigationValue>ON</MitigationValue>
+      <MitigationValue>true</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>POWERPNT.EXE:ASLR:ForceRelocateImages:ON</RawString>
@@ -4192,7 +4192,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilter</MitigationName>
       <MitigationTarget>POWERPNT.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>POWERPNT.EXE:Payload:OverrideEnableExportAddressFilter:False</RawString>
@@ -4204,7 +4204,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilterPlus</MitigationName>
       <MitigationTarget>POWERPNT.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>POWERPNT.EXE:Payload:OverrideEnableExportAddressFilterPlus:False</RawString>
@@ -4216,7 +4216,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableImportAddressFilter</MitigationName>
       <MitigationTarget>POWERPNT.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>POWERPNT.EXE:Payload:OverrideEnableImportAddressFilter:False</RawString>
@@ -4228,7 +4228,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopStackPivot</MitigationName>
       <MitigationTarget>POWERPNT.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>POWERPNT.EXE:Payload:OverrideEnableRopStackPivot:False</RawString>
@@ -4240,7 +4240,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopCallerCheck</MitigationName>
       <MitigationTarget>POWERPNT.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>POWERPNT.EXE:Payload:OverrideEnableRopCallerCheck:False</RawString>
@@ -4252,7 +4252,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopSimExec</MitigationName>
       <MitigationTarget>POWERPNT.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>POWERPNT.EXE:Payload:OverrideEnableRopSimExec:False</RawString>
@@ -4264,7 +4264,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideDEP</MitigationName>
       <MitigationTarget>PPTVIEW.EXE</MitigationTarget>
       <MitigationType>DEP</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>PPTVIEW.EXE:DEP:OverrideDEP:False</RawString>
@@ -4276,7 +4276,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>ForceRelocateImages</MitigationName>
       <MitigationTarget>PPTVIEW.EXE</MitigationTarget>
       <MitigationType>ASLR</MitigationType>
-      <MitigationValue>ON</MitigationValue>
+      <MitigationValue>true</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>PPTVIEW.EXE:ASLR:ForceRelocateImages:ON</RawString>
@@ -4288,7 +4288,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilter</MitigationName>
       <MitigationTarget>PPTVIEW.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>PPTVIEW.EXE:Payload:OverrideEnableExportAddressFilter:False</RawString>
@@ -4300,7 +4300,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilterPlus</MitigationName>
       <MitigationTarget>PPTVIEW.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>PPTVIEW.EXE:Payload:OverrideEnableExportAddressFilterPlus:False</RawString>
@@ -4312,7 +4312,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableImportAddressFilter</MitigationName>
       <MitigationTarget>PPTVIEW.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>PPTVIEW.EXE:Payload:OverrideEnableImportAddressFilter:False</RawString>
@@ -4324,7 +4324,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopStackPivot</MitigationName>
       <MitigationTarget>PPTVIEW.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>PPTVIEW.EXE:Payload:OverrideEnableRopStackPivot:False</RawString>
@@ -4336,7 +4336,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopCallerCheck</MitigationName>
       <MitigationTarget>PPTVIEW.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>PPTVIEW.EXE:Payload:OverrideEnableRopCallerCheck:False</RawString>
@@ -4348,7 +4348,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopSimExec</MitigationName>
       <MitigationTarget>PPTVIEW.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>PPTVIEW.EXE:Payload:OverrideEnableRopSimExec:False</RawString>
@@ -4360,7 +4360,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideDEP</MitigationName>
       <MitigationTarget>VISIO.EXE</MitigationTarget>
       <MitigationType>DEP</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>VISIO.EXE:DEP:OverrideDEP:False</RawString>
@@ -4372,7 +4372,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>ForceRelocateImages</MitigationName>
       <MitigationTarget>VISIO.EXE</MitigationTarget>
       <MitigationType>ASLR</MitigationType>
-      <MitigationValue>ON</MitigationValue>
+      <MitigationValue>true</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>VISIO.EXE:ASLR:ForceRelocateImages:ON</RawString>
@@ -4384,7 +4384,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilter</MitigationName>
       <MitigationTarget>VISIO.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>VISIO.EXE:Payload:OverrideEnableExportAddressFilter:False</RawString>
@@ -4396,7 +4396,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilterPlus</MitigationName>
       <MitigationTarget>VISIO.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>VISIO.EXE:Payload:OverrideEnableExportAddressFilterPlus:False</RawString>
@@ -4408,7 +4408,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableImportAddressFilter</MitigationName>
       <MitigationTarget>VISIO.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>VISIO.EXE:Payload:OverrideEnableImportAddressFilter:False</RawString>
@@ -4420,7 +4420,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopStackPivot</MitigationName>
       <MitigationTarget>VISIO.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>VISIO.EXE:Payload:OverrideEnableRopStackPivot:False</RawString>
@@ -4432,7 +4432,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopCallerCheck</MitigationName>
       <MitigationTarget>VISIO.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>VISIO.EXE:Payload:OverrideEnableRopCallerCheck:False</RawString>
@@ -4444,7 +4444,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopSimExec</MitigationName>
       <MitigationTarget>VISIO.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>VISIO.EXE:Payload:OverrideEnableRopSimExec:False</RawString>
@@ -4456,7 +4456,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideDEP</MitigationName>
       <MitigationTarget>VPREVIEW.EXE</MitigationTarget>
       <MitigationType>DEP</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>VPREVIEW.EXE:DEP:OverrideDEP:False</RawString>
@@ -4468,7 +4468,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>ForceRelocateImages</MitigationName>
       <MitigationTarget>VPREVIEW.EXE</MitigationTarget>
       <MitigationType>ASLR</MitigationType>
-      <MitigationValue>ON</MitigationValue>
+      <MitigationValue>true</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>VPREVIEW.EXE:ASLR:ForceRelocateImages:ON</RawString>
@@ -4480,7 +4480,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilter</MitigationName>
       <MitigationTarget>VPREVIEW.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>VPREVIEW.EXE:Payload:OverrideEnableExportAddressFilter:False</RawString>
@@ -4492,7 +4492,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilterPlus</MitigationName>
       <MitigationTarget>VPREVIEW.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>VPREVIEW.EXE:Payload:OverrideEnableExportAddressFilterPlus:False</RawString>
@@ -4504,7 +4504,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableImportAddressFilter</MitigationName>
       <MitigationTarget>VPREVIEW.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>VPREVIEW.EXE:Payload:OverrideEnableImportAddressFilter:False</RawString>
@@ -4516,7 +4516,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopStackPivot</MitigationName>
       <MitigationTarget>VPREVIEW.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>VPREVIEW.EXE:Payload:OverrideEnableRopStackPivot:False</RawString>
@@ -4528,7 +4528,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopCallerCheck</MitigationName>
       <MitigationTarget>VPREVIEW.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>VPREVIEW.EXE:Payload:OverrideEnableRopCallerCheck:False</RawString>
@@ -4540,7 +4540,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopSimExec</MitigationName>
       <MitigationTarget>VPREVIEW.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>VPREVIEW.EXE:Payload:OverrideEnableRopSimExec:False</RawString>
@@ -4552,7 +4552,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideDEP</MitigationName>
       <MitigationTarget>WINWORD.EXE</MitigationTarget>
       <MitigationType>DEP</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>WINWORD.EXE:DEP:OverrideDEP:False</RawString>
@@ -4564,7 +4564,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>ForceRelocateImages</MitigationName>
       <MitigationTarget>WINWORD.EXE</MitigationTarget>
       <MitigationType>ASLR</MitigationType>
-      <MitigationValue>ON</MitigationValue>
+      <MitigationValue>true</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>WINWORD.EXE:ASLR:ForceRelocateImages:ON</RawString>
@@ -4576,7 +4576,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilter</MitigationName>
       <MitigationTarget>WINWORD.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>WINWORD.EXE:Payload:OverrideEnableExportAddressFilter:False</RawString>
@@ -4588,7 +4588,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilterPlus</MitigationName>
       <MitigationTarget>WINWORD.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>WINWORD.EXE:Payload:OverrideEnableExportAddressFilterPlus:False</RawString>
@@ -4600,7 +4600,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableImportAddressFilter</MitigationName>
       <MitigationTarget>WINWORD.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>WINWORD.EXE:Payload:OverrideEnableImportAddressFilter:False</RawString>
@@ -4612,7 +4612,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopStackPivot</MitigationName>
       <MitigationTarget>WINWORD.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>WINWORD.EXE:Payload:OverrideEnableRopStackPivot:False</RawString>
@@ -4624,7 +4624,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopCallerCheck</MitigationName>
       <MitigationTarget>WINWORD.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>WINWORD.EXE:Payload:OverrideEnableRopCallerCheck:False</RawString>
@@ -4636,7 +4636,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopSimExec</MitigationName>
       <MitigationTarget>WINWORD.EXE</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>WINWORD.EXE:Payload:OverrideEnableRopSimExec:False</RawString>
@@ -4648,7 +4648,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideDEP</MitigationName>
       <MitigationTarget>wmplayer.exe</MitigationTarget>
       <MitigationType>DEP</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>wmplayer.exe:DEP:OverrideDEP:False</RawString>
@@ -4660,7 +4660,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilter</MitigationName>
       <MitigationTarget>wmplayer.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>wmplayer.exe:Payload:OverrideEnableExportAddressFilter:False</RawString>
@@ -4672,7 +4672,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilterPlus</MitigationName>
       <MitigationTarget>wmplayer.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>wmplayer.exe:Payload:OverrideEnableExportAddressFilterPlus:False</RawString>
@@ -4684,7 +4684,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableImportAddressFilter</MitigationName>
       <MitigationTarget>wmplayer.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>wmplayer.exe:Payload:OverrideEnableImportAddressFilter:False</RawString>
@@ -4696,7 +4696,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopStackPivot</MitigationName>
       <MitigationTarget>wmplayer.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>wmplayer.exe:Payload:OverrideEnableRopStackPivot:False</RawString>
@@ -4708,7 +4708,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopCallerCheck</MitigationName>
       <MitigationTarget>wmplayer.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>wmplayer.exe:Payload:OverrideEnableRopCallerCheck:False</RawString>
@@ -4720,7 +4720,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopSimExec</MitigationName>
       <MitigationTarget>wmplayer.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>wmplayer.exe:Payload:OverrideEnableRopSimExec:False</RawString>
@@ -4732,7 +4732,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideDEP</MitigationName>
       <MitigationTarget>wordpad.exe</MitigationTarget>
       <MitigationType>DEP</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>wordpad.exe:DEP:OverrideDEP:False</RawString>
@@ -4744,7 +4744,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilter</MitigationName>
       <MitigationTarget>wordpad.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>wordpad.exe:Payload:OverrideEnableExportAddressFilter:False</RawString>
@@ -4756,7 +4756,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableExportAddressFilterPlus</MitigationName>
       <MitigationTarget>wordpad.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>wordpad.exe:Payload:OverrideEnableExportAddressFilterPlus:False</RawString>
@@ -4768,7 +4768,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableImportAddressFilter</MitigationName>
       <MitigationTarget>wordpad.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>wordpad.exe:Payload:OverrideEnableImportAddressFilter:False</RawString>
@@ -4780,7 +4780,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopStackPivot</MitigationName>
       <MitigationTarget>wordpad.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>wordpad.exe:Payload:OverrideEnableRopStackPivot:False</RawString>
@@ -4792,7 +4792,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopCallerCheck</MitigationName>
       <MitigationTarget>wordpad.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>wordpad.exe:Payload:OverrideEnableRopCallerCheck:False</RawString>
@@ -4804,7 +4804,7 @@ The PowerShell command produces a list of mitigations; only those with a require
       <MitigationName>OverrideEnableRopSimExec</MitigationName>
       <MitigationTarget>wordpad.exe</MitigationTarget>
       <MitigationType>Payload</MitigationType>
-      <MitigationValue>False</MitigationValue>
+      <MitigationValue>false</MitigationValue>
       <OrganizationValueRequired>False</OrganizationValueRequired>
       <OrganizationValueTestString />
       <RawString>wordpad.exe:Payload:OverrideEnableRopSimExec:False</RawString>
