@@ -24,8 +24,27 @@ function Get-MitigationTargetName
 
     try
     {
-        $executableMatch = ($checkContent | Select-String -Pattern $regularExpression.MitigationTargetName -CaseSensitive).Matches.Value
-        return $executableMatch
+        #$executableMatch = ($checkContent | Select-String -Pattern $regularExpression.MitigationTargetName -CaseSensitive).Matches.Value
+        switch($CheckContent)
+        {
+            {$CheckContent -match "Get-ProcessMitigation -System"}
+            {
+                $executableMatch = 'System'
+                return $executableMatch
+            }
+
+            {$CheckContent -match "Get-ProcessMitigation -Name chrome.exe"}
+            {
+                $executableMatch = 'chrome.exe'
+                return $executableMatch
+            }
+
+            default
+            {
+                $executableMatch = $checkContent -split (":")
+                return $executableMatch[0]
+            }
+        }
     }
     catch
     {
@@ -57,7 +76,7 @@ function Get-MitigationType
 
     try
     {
-        $mitigationType = ($CheckContent | Select-String -Pattern $regularExpression.MitigationType).Matches.Value
+        $mitigationType = ($CheckContent | Select-String -Pattern $regularExpression.MitigationType -AllMatches).Matches.Value | Select-Object -Unique
         return $mitigationType
     }
     catch
@@ -90,7 +109,7 @@ function Get-MitigationName
 
     try
     {
-        $mitigationName = ($CheckContent | Select-String -Pattern $regularExpression.MitigationName).Matches.Value
+        $mitigationName = ($CheckContent | Select-String -Pattern $regularExpression.MitigationName -AllMatches).Matches.Value | Select-Object -Unique
         return $mitigationName
     }
     catch
@@ -123,7 +142,7 @@ function Get-MitigationValue
 
     try
     {
-        $mitigationValue = ($CheckContent | Select-String -Pattern $regularExpression.MitigationValue).Matches.Value
+        $mitigationValue = ($CheckContent | Select-String -Pattern $regularExpression.MitigationValue -CaseSensitive).Matches.Value
         return $mitigationValue
     }
     catch
@@ -182,6 +201,10 @@ function Split-MultipleProcessMitigations
     $matchNamesGroup = @()
     $processMitigations = @()
     $matchTargets = ($CheckContent | Select-String -Pattern $regularExpression.MitigationTarget -AllMatches).Matches.Value | Select-Object -Unique
+    if($matchTargets -eq "[application name]")
+    {
+        $matchTargets = ((($CheckContent | Select-String -Pattern ".*.EXE|.*.exe" -CaseSensitive).Matches.Value) -split (",")).replace("and ", "")
+    }
     $matchTypes = ($CheckContent | Select-String -Pattern $regularExpression.MitigationType -AllMatches).Matches.Value | Select-Object -Unique
     $matchNames = ($CheckContent | Select-String -Pattern $regularExpression.MitigationName -AllMatches).Matches.Value | Select-Object -Unique
 

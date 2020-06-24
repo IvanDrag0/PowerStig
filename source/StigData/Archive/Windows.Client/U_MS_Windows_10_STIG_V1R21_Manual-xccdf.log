@@ -10,3 +10,4 @@ V-100093::This requirement is not applicable to dedicated VTC suites located in 
 V-100093::Value Name: Deny::ValueName: Value
 V-99561::Value data: 1::Value: 0x00000001 (1)
 V-99559::Value data: 0::Value: 0x00000000 (0)
+V-77191::OverrideEnableRopStackPivot= False::OverrideEnableRopStackPivot: False

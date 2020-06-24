@@ -50,7 +50,6 @@ class AuditPolicyRuleConvert : AuditPolicyRule
     {
         return [regex]::Matches(
             $this.RawString,
-            #'(?:(?:\w+(?:\s|\/))+(?:(?:>|-)>(?:\s+)?))(?<subcategory>(?:\w+\s)+)(?:-(?:\s+)?)(?<auditflag>(?:\w+)+)'
             '(?:(?:\w+(?:\s|\/))+(?:(?: >|>|-)>(?:\s+)?))(?<subcategory>(?:.+?(?=\s-\s)))\s-\s(?<auditflag>(?:\w+)+)'
         )
     }
