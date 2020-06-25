@@ -148,7 +148,8 @@ function Get-MitigationValue
         {
             $mitigationValue = 'true'
         }
-        else {
+        else
+        {
             $mitigationValue = 'false'
         }
 

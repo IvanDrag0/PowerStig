@@ -10,7 +10,3 @@ data regularExpression
         MitigationValue = True|False|ON
 '@
 }
-
-
-
-#MitigationTargetName = .*.EXE|.*.exe|System
