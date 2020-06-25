@@ -31,19 +31,7 @@ try
                 MitigationName = 'Enable'
                 MitigationValue = 'true'
                 OrganizationValueRequired = $false
-                CheckContent = 'This is NA prior to v1709 of Windows 10.
-
-                Run "Windows PowerShell" with elevated privileges (run as administrator).
-
-                Enter "Get-ProcessMitigation -Name wordpad.exe".
-                (Get-ProcessMitigation can be run without the -Name parameter to get a list of all application mitigations configured.)
-
-                If the following mitigations do not have a status of "ON", this is a finding:
-
-                DEP:
-                Enable: ON
-
-                The PowerShell command produces a list of mitigations; only those with a required status of "ON" are listed here.'
+                CheckContent = 'wordpad.exe:DEP:Enable:ON'
             }
         )
         #endregion
@@ -86,15 +74,12 @@ try
 
             foreach ($testRule in $testRuleList)
             {
-                # Get the rule element with the checkContent injected into it
-                $stigRule = Get-TestStigRule -CheckContent $testRule.CheckContent -ReturnGroupOnly
-                # Create an instance of the convert class that is currently being tested
-                $convertedRule = [ProcessMitigationRuleConvert]::new($stigRule)
                 It "Should return $true" {
-                    $convertedRule.HasMultipleRules() | Should -Be $true
+                    $multipleRule = [ProcessMitigationRuleConvert]::HasMultipleRules($testRule.CheckContent)
+                    $multipleRule | Should -Be $true
                 }
                 It "Should return $($testRule.Count) rules" {
-                    $multipleRule = $convertedRule.SplitMultipleRules()
+                    $multipleRule = [ProcessMitigationRuleConvert]::SplitMultipleRules($testRule.CheckContent)
                     $multipleRule.count | Should -Be $testRule.Count
                 }
             }

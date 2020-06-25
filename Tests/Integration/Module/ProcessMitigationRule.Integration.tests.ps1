@@ -35,17 +35,7 @@ try
             If the following mitigations do not have a status of "ON", this is a finding:f "ON", this is a finding:
 
             DEP:
-            Enable: ON
-
-            Payload:
-            EnableExportAddressFilter: ON
-            EnableExportAddressFilterPlus: ON
-            EnableImportAddressFilter: ON
-            EnableRopStackPivot: ON
-            EnableRopCallerCheck: ON
-            EnableRopSimExec: ON
-
-            The PowerShell command produces a list of mitigations; only those with a required status of "ON" are listed here.'
+            Enable: ON'
         }
         @{
             MitigationTarget = 'java.exe,javaw.exe,javaws.exe'
