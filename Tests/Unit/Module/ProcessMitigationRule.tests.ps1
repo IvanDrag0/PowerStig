@@ -9,8 +9,9 @@ try
         $testRuleList = @(
             @{
                 MitigationTarget = 'System'
-                Enable = 'TerminateOnError'
-                Disable = $null
+                MitigationType = 'Heap'
+                MitigationName = 'TerminateOnError'
+                MitigationValue = 'true'
                 OrganizationValueRequired = $false
                 CheckContent = ' This is NA prior to v1709 of Windows 10.
 
@@ -26,8 +27,9 @@ try
             },
             @{
                 MitigationTarget = 'wordpad.exe'
-                Enable = 'DEP,EnableExportAddressFilter,EnableExportAddressFilterPlus,EnableImportAddressFilter,EnableRopStackPivot,EnableRopCallerCheck,EnableRopSimExec'
-                Disable = $null
+                MitigationType = 'DEP'
+                MitigationName = 'Enable'
+                MitigationValue = 'true'
                 OrganizationValueRequired = $false
                 CheckContent = 'This is NA prior to v1709 of Windows 10.
 
@@ -41,32 +43,7 @@ try
                 DEP:
                 Enable: ON
 
-                Payload:
-                EnableExportAddressFilter: ON
-                EnableExportAddressFilterPlus: ON
-                EnableImportAddressFilter: ON
-                EnableRopStackPivot: ON
-                EnableRopCallerCheck: ON
-                EnableRopSimExec: ON
-
                 The PowerShell command produces a list of mitigations; only those with a required status of "ON" are listed here.'
-            },
-            @{
-                MitigationTarget = 'System'
-                Enable = 'DEP'
-                Disable = $null
-                OrganizationValueRequired = $false
-                CheckContent = 'This is NA prior to v1709 of Windows 10.
-
-                Run "Windows PowerShell" with elevated privileges (run as administrator).
-
-                Enter "Get-ProcessMitigation -System".
-
-                If the status of "DEP: Enable" is "OFF", this is a finding.
-
-                Values that would not be a finding include:
-                ON
-                NOTSET'
             }
         )
         #endregion
@@ -81,7 +58,7 @@ try
             # TODO move this to the CommonTests
             $testRuleList = @(
                 @{
-                    Count = 3
+                    Count = 21
                     CheckContent = 'This is NA prior to v1709 of Windows 10.
 
                     Run "Windows PowerShell" with elevated privileges (run as administrator).
