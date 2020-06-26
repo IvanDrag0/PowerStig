@@ -110,11 +110,13 @@ try
             },
             @{
                 RuleType         = 'ProcessMitigationRule'
-                CheckContent     = "HardCodedRule(ProcessMitigationRule)@{DscResource = 'ProcessMitigation'; Disable = ''; Enable = 'SEHOP'; MitigationTarget = 'System'}"
+                CheckContent     = "HardCodedRule(ProcessMitigationRule)@{DscResource = 'ProcessMitigation';MitigationTarget = 'System';MitigationTYpe = 'DEP';MitigationName = 'Enable';MitigationValue = 'false'}"
                 DscResource      = 'ProcessMitigation'
-                Disable          = ''
-                Enable           = 'SEHOP'
                 MitigationTarget = 'System'
+                MitigationType   = 'DEP'
+                MitigationName   = 'Enable'
+                MitigationValue  = 'false'
+
             },
             @{
                 RuleType     = 'RegistryRule'
