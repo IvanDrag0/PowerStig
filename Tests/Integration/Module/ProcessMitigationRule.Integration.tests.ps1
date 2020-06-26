@@ -7,8 +7,9 @@ try
     $mitigationsRulesToTest = @(
         @{
             MitigationTarget = 'System'
-            Enable           = 'TerminateOnError'
-            Disable          = $null
+            MitigationType   = 'Heap'
+            MitigationName   = 'TerminateOnError'
+            MitigationValue   = 'true'
             CheckContent     = ' This is NA prior to v1709 of Windows 10.
 
             Run "Windows PowerShell" with elevated privileges (run as administrator).
