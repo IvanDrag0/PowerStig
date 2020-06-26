@@ -216,7 +216,6 @@ function Split-MultipleProcessMitigations
     }
 
     $matchTypes = ($CheckContent | Select-String -Pattern $regularExpression.MitigationType -AllMatches).Matches.Value | Select-Object -Unique
-    $matchNames = ($CheckContent | Select-String -Pattern $regularExpression.MitigationName -AllMatches).Matches.Value | Select-Object -Unique
 
     foreach($mitigationTarget in $matchTargets)
     {

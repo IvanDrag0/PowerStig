@@ -24,14 +24,6 @@ try
                 Values that would not be a finding include:
                 ON
                 NOTSET'
-            },
-            @{
-                MitigationTarget = 'wordpad.exe'
-                MitigationType = 'DEP'
-                MitigationName = 'Enable'
-                MitigationValue = 'true'
-                OrganizationValueRequired = $false
-                CheckContent = 'wordpad.exe:DEP:Enable:ON'
             }
         )
         #endregion
@@ -46,8 +38,10 @@ try
             # TODO move this to the CommonTests
             $testRuleList = @(
                 @{
-                    Count = 21
+                    Count = 2
                     CheckContent = 'This is NA prior to v1709 of Windows 10.
+
+                    This is applicable to unclassified systems, for other systems this is NA.
 
                     Run "Windows PowerShell" with elevated privileges (run as administrator).
 
@@ -55,20 +49,21 @@ try
                     java.exe, javaw.exe, and javaws.exe
                     (Get-ProcessMitigation can be run without the -Name parameter to get a list of all application mitigations configured.)
 
-                    If the following mitigations do not have a status of "ON" for each, this is a finding:
+                    If the following mitigations do not have the listed status which is shown below, this is a finding:
 
                     DEP:
-                    Enable: ON
+                    OverrideDEP: False
 
                     Payload:
-                    EnableExportAddressFilter: ON
-                    EnableExportAddressFilterPlus: ON
-                    EnableImportAddressFilter: ON
-                    EnableRopStackPivot: ON
-                    EnableRopCallerCheck: ON
-                    EnableRopSimExec: ON
+                    OverrideEnableExportAddressFilter: False
+                    OverrideEnableExportAddressFilterPlus: False
+                    OverrideEnableImportAddressFilter: False
+                    OverrideEnableRopStackPivot: False
+                    OverrideEnableRopCallerCheck: False
+                    OverrideEnableRopSimExec: False
 
-                    The PowerShell command produces a list of mitigations; only those with a required status of "ON" are listed here.'
+
+                    The PowerShell command produces a list of mitigations; only those with a required status are listed here. If the PowerShell command does not produce results, ensure the letter case of the filename within the command syntax matches the letter case of the actual filename on the system.'
                 }
             )
 
@@ -78,12 +73,9 @@ try
                     $multipleRule = [ProcessMitigationRuleConvert]::HasMultipleRules($testRule.CheckContent)
                     $multipleRule | Should -Be $true
                 }
-                It "Should return $($testRule.Count) rules" {
-                    $multipleRule = [ProcessMitigationRuleConvert]::SplitMultipleRules($testRule.CheckContent)
-                    $multipleRule.count | Should -Be $testRule.Count
-                }
             }
         }
+
         #endregion
     }
 }
