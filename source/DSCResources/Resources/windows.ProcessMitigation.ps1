@@ -11,6 +11,7 @@ foreach ($target in $mitigationTargets)
     $disableValue = @()
     $idValue = @()
 
+
     foreach ($rule in $targetrules)
     {
         if ($rule.enable)
