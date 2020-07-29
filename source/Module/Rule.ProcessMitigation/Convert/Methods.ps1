@@ -24,25 +24,18 @@ function Get-MitigationTargetName
 
     try
     {
-        #$executableMatch = ($checkContent | Select-String -Pattern $regularExpression.MitigationTargetName -CaseSensitive).Matches.Value
-        switch($CheckContent)
+        switch ($checkContent)
         {
-            {$CheckContent -match "Get-ProcessMitigation -System"}
+            { $PSItem -match '-System' }
             {
-                $executableMatch = 'System'
-                return $executableMatch
+                return 'System'
             }
-
-            {$CheckContent -match "Get-ProcessMitigation -Name chrome.exe"}
+            { $PSItem -match '-Name' }
             {
-                $executableMatch = 'chrome.exe'
-                return $executableMatch
-            }
+                # Grab all the text that starts on a new line or with whitespace and ends in .exe
+                $executableMatches = $checkContent | Select-String -Pattern '(^|\s)\S*?\.exe' -AllMatches
+                return ( $executableMatches.Matches.Value.Trim() ) -join ','
 
-            default
-            {
-                $executableMatch = $checkContent -split (":")
-                return $executableMatch[0]
             }
         }
     }
@@ -60,40 +53,7 @@ function Get-MitigationTargetName
     .PARAMETER CheckContent
         Specifies the check-content element in the xccdf
 #>
-function Get-MitigationType
-{
-    [CmdletBinding()]
-    [OutputType([string[]])]
-    param
-    (
-        [Parameter(Mandatory = $true)]
-        [AllowEmptyString()]
-        [string[]]
-        $CheckContent
-    )
-
-    Write-Verbose "[$($MyInvocation.MyCommand.Name)]"
-
-    try
-    {
-        $mitigationType = ($CheckContent | Select-String -Pattern $regularExpression.MitigationType -AllMatches).Matches.Value | Select-Object -Unique
-        return $mitigationType
-    }
-    catch
-    {
-        Write-Verbose "[$($MyInvocation.MyCommand.Name)] Mitigation Types : Not Found"
-        return $null
-    }
-}
-
-<#
-    .SYNOPSIS
-        Retreives the mitigation policy name from the check-content element in the xccdf
-
-    .PARAMETER CheckContent
-        Specifies the check-content element in the xccdf
-#>
-function Get-MitigationName
+function Get-MitigationPolicyToEnable
 {
     [CmdletBinding()]
     [OutputType([string])]
@@ -109,133 +69,141 @@ function Get-MitigationName
 
     try
     {
-        $mitigationName = ($CheckContent | Select-String -Pattern $regularExpression.MitigationName -AllMatches).Matches.Value | Select-Object -Unique
-        return $mitigationName
+        # Determine if the stig rule contains policies to be enabled
+        if ( ( Test-PoliciesToEnable -CheckContent $checkContent ) -eq $false )
+        {
+            return $null
+        }
+
+        $result = @()
+        foreach ($line in $checkContent)
+        {
+            switch ($line)
+            {
+                { $PSItem -match $regularExpression.IfTheStatusOf }
+                {
+                    <# 
+                    Grab the line that has "If the status of" then grab the text inbetween " and :
+                    Check to see if the line was the word 'Enable' in it
+                    #>
+                    if ($PSItem -match 'Enable')
+                    {
+                        $result += ( ( $line | Select-String -Pattern $regularExpression.TextBetweenDoubleQuoteAndColon ).Matches.Value -replace '"' -replace ':' ).Trim()
+                    }
+                    else
+                    {
+                        $result += ( ( $line | Select-String -Pattern $regularExpression.TextBetweenColonAndDoubleQuote ).Matches.Value -replace '"' -replace ':' ).Trim()
+                    }
+                }
+                { $PSItem -match $regularExpression.ColonSpaceOn }
+                {
+                    <#
+                        This address the edge case where the mitigation is specified to be enabled on a seperate line example (DEP):
+                        DEP:
+                        Enable: ON
+
+                        ASLR:
+                        BottomUp: ON
+                        ForceRelocateImages: ON
+                    #>
+                    if ( $line -match $regularExpression.EnableColon )
+                    {
+                        $enableLineMatch = ( $checkContent | Select-String -Pattern $line ).LineNumber
+                        $result += ( ( $checkContent[$enableLineMatch - 2] ) -replace ':' ).Trim()
+                    }
+                    else
+                    {
+                        $result += ( $line -replace $regularExpression.ColonSpaceOn ).Trim()
+                    }
+                }
+            }
+        }
+        return $result -join ','
     }
     catch
     {
-        Write-Verbose "[$($MyInvocation.MyCommand.Name)] Mitigation Name : Not Found"
+        Write-Verbose "[$($MyInvocation.MyCommand.Name)] Mitigation Policy : Not Found"
         return $null
     }
 }
 
 <#
     .SYNOPSIS
-        Retreives the mitigation policy name from the check-content element in the xccdf
+        Test if the check-content contains mitigations polices to enable.
 
     .PARAMETER CheckContent
         Specifies the check-content element in the xccdf
+
+    .NOTES
+        Currently all rules in the STIG state the policies referenced need to be enabled.
+        However that could change in the future or in other STIGs so we need to check for both conditions (Enabled|Disabled)
 #>
-function Get-MitigationValue
-{
-    [CmdletBinding()]
-    [OutputType([string])]
-    param
-    (
-        [Parameter(Mandatory = $true)]
-        [AllowEmptyString()]
-        [string[]]
-        $CheckContent
-    )
-
-    Write-Verbose "[$($MyInvocation.MyCommand.Name)]"
-
-    try
-    {
-        $mitigationValue = ($CheckContent | Select-String -Pattern $regularExpression.MitigationValue -CaseSensitive).Matches.Value
-
-        if($mitigationValue -match 'ON|True')
-        {
-            $mitigationValue = 'true'
-        }
-        else
-        {
-            $mitigationValue = 'false'
-        }
-
-        return $mitigationValue
-    }
-    catch
-    {
-        Write-Verbose "[$($MyInvocation.MyCommand.Name)] Mitigation Value : Not Found"
-        return $null
-    }
-}
-
-<#
-    .SYNOPSIS
-        Check if the string (MitigationTarget) contains a comma. If so the rule needs to be split
-#>
-
-function Test-MultipleProcessMitigations
+function Test-PoliciesToEnable
 {
     [CmdletBinding()]
     [OutputType([bool])]
     param
     (
         [Parameter(Mandatory = $true)]
-        [psobject]
+        [AllowEmptyString()]
+        [string[]]
         $CheckContent
     )
 
-    $matchTargets = ($CheckContent | Select-String -Pattern $regularExpression.MitigationTarget -AllMatches).Matches.Value | Select-Object -Unique
-    $matchTypes = ($CheckContent | Select-String -Pattern $regularExpression.MitigationType -AllMatches).Matches.Value | Select-Object -Unique
-    $matchNames = ($CheckContent | Select-String -Pattern $regularExpression.MitigationName -AllMatches).Matches.Value | Select-Object -Unique
-
-    if (($matchTargets.count -gt 1) -or ($matchTypes.count -gt 1) -or ($matchNames.count -gt 1))
+    foreach ( $line in $checkContent )
     {
-        return $true
+        if ( $line -match $regularExpression.IfTheStatusOfIsOff )
+        {
+            return $true
+        }
+
+        if ( $line -match $regularExpression.NotHaveAStatusOfOn )
+        {
+            return $true
+        }
     }
     return $false
 }
-
-
 
 <#
     .SYNOPSIS
         Consumes a list of mitigation targets seperated by a comma and outputs an array
 #>
-function Split-MultipleProcessMitigations
+function Split-ProcessMitigationRule
 {
     [CmdletBinding()]
-    [OutputType([System.Collections.ArrayList])]
+    [OutputType([array])]
     param
     (
         [Parameter(Mandatory = $true)]
-        [psobject]
-        $CheckContent
+        [AllowEmptyString()]
+        [string]
+        $MitigationTarget
     )
 
-    $matchNamesGroup = @()
-    $processMitigations = @()
-    $matchTargets = ($CheckContent | Select-String -Pattern $regularExpression.MitigationTarget -AllMatches).Matches.Value | Select-Object -Unique
-
-    if($matchTargets -eq "[application name]")
-    {
-        $matchTargets = ((($CheckContent | Select-String -Pattern ".*.EXE|.*.exe" -CaseSensitive).Matches.Value) -split (",")).replace("and ", "")
-    }
-
-    $matchTypes = ($CheckContent | Select-String -Pattern $regularExpression.MitigationType -AllMatches).Matches.Value | Select-Object -Unique
-
-    foreach($mitigationTarget in $matchTargets)
-    {
-        foreach ($mitigationType in $MatchTypes)
-        {
-            $matchNamesGroup = ($CheckContent | Select-String -Pattern "(?<=$($mitigationType):\n)(.+[\n\r])+" -AllMatches).Matches.Value
-            $matchNamesGroupSplit = ($matchNamesGroup.trim()).Split("`n")
-            foreach($matchName in $matchNamesGroupSplit)
-            {
-                $mitigationNames = ($matchName | Select-String -Pattern $regularExpression.MitigationName).Matches.Value
-                foreach($mitigationName in $mitigationNames)
-                {
-                    $mitigationValue = ($matchName | Select-String -Pattern "(?<=$($mitigationName):\s)(\w+)" -AllMatches).Matches.Value
-                    $processMitigations += '{0}:{1}:{2}:{3}' -f $mitigationTarget,$mitigationType,$mitigationName,$mitigationValue
-                }
-            }
-        }
-    }
-
-    return $processMitigations
+    return ( $MitigationTarget -split ',' )
 }
 
+<#
+    .SYNOPSIS
+        Check if the string (MitigationTarget) contains a comma. If so the rule needs to be split
+#>
+function Test-MultipleProcessMitigationRule
+{
+    [CmdletBinding()]
+    [OutputType([bool])]
+    param
+    (
+        [Parameter(Mandatory = $true)]
+        [AllowEmptyString()]
+        [string]
+        $MitigationTarget
+    )
+
+    if ( $MitigationTarget -match ',')
+    {
+        return $true
+    }
+    return $false
+}
 #endregion
