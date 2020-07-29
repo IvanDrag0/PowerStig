@@ -7,10 +7,18 @@ $mitigationTargets = $rules.MitigationTarget | Select-Object -Unique
 foreach ($target in $mitigationTargets)
 {
     $targetrules = $rules | Where-Object {$_.MitigationTarget -eq "$target"}
-    $enableValue = @()
-    $disableValue = @()
-    $idValue = @()
+    $mitigationTypes = $rules.MitigationType| Select-Object -Unique
 
+    foreach ($type in $mitigationTypes)
+    {
+        ProcessMitigation "$Target-$idValue"
+        {
+            MitigationTarget = $target
+            Enable           = $enableValue
+            Disable          = $disableValue
+        }
+    }
+}
 
     foreach ($rule in $targetrules)
     {
